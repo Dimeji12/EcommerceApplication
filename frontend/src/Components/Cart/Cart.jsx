@@ -6,7 +6,8 @@ import CartButtons from './CartButtons/CartButtons';
 import AddCoupon from './CartInfo/AddCoupon';
 import CartInfoMenu from './CartInfo/CartInfoMenu';
 import CartProducts from './CartProducts/CartProducts';
-
+//This is the main page that renders all the necessary cart related componenets and renders them
+// in the cart page 
 const Cart = () => {
   const { t } = useTranslation();
 

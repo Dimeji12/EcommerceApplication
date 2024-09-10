@@ -5,10 +5,9 @@ import AddToCartButton from "./AddToCartButton";
 import s from "./ProductCard.module.scss";
 import ProductCardIcons from "./ProductCardIcons";
 import ProductCardInfo from "./ProductCardInfo";
-import {useEffect, useState} from "react";
-import {apiUrl} from "../../../../Data/BaseApi.js";
-
-//TODO: Note that product card image is loaded here /Components/Shared/ProductsCards/ProductCard/ProductCard.jsx
+import { useEffect, useState } from "react";
+import { apiUrl } from "../../../../Data/BaseApi.js"
+//The product card component holding the 
 const ProductCard = ({
   product,
   customization = {
@@ -60,27 +59,34 @@ const ProductCard = ({
     navigateTo(`/details?product=${name.toLowerCase()}`);
   }
 
-  useEffect(() => {
-    async function fetchProductImage() {
-      if (id != null) {
+  useEffect(() =>
+  {
+    async function fetchProductImage()
+    {
+      if (id != null)
+      {
         const baseUrl = `${apiUrl}imagedata/product/${id}/main-image`;
 
-        try {
+        try
+        {
           const response = await fetch(baseUrl);
-          if (!response.ok) {
+          if (!response.ok)
+          {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
 
           const imageBlob = await response.blob();
           const imageObjectURL = URL.createObjectURL(imageBlob);
           setProductImage(imageObjectURL);
-        } catch (error) {
+        } catch (error)
+        {
           console.error('Error fetching image:', error.message);
         }
       }
     }
 
-    fetchProductImage().catch(err => {
+    fetchProductImage().catch(err =>
+    {
       console.log("Fetch failed:", err);
     });
   }, [id]);

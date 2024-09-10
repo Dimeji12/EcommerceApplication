@@ -5,6 +5,7 @@ import s from "./CartProducts.module.scss";
 
 const CartProducts = () => {
   const { t } = useTranslation();
+  
   const { cartProducts } = useSelector((state) => state.products);
   const productsTable = "cartPage.productsTable";
 
@@ -20,6 +21,7 @@ const CartProducts = () => {
       </thead>
 
       <tbody>
+        {/*This maps out the prouducts in the cart  */}
         {cartProducts.map((product) => (
           <CartProduct key={product.id} data={product} />
         ))}

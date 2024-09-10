@@ -13,7 +13,7 @@ import s from './ProductsPage.module.scss';
 import { useState, useEffect } from 'react';
 import {apiUrl} from "../../Data/BaseApi.js";
 
-//TODO: Note that all products are loaded here
+
 const ProductsPage = () =>
 {
   const [products, setProducts] = useState([])

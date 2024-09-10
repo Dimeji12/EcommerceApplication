@@ -9,7 +9,7 @@ import useGetResizeWindow from "src/Hooks/Helper/useGetResizeWindow";
 import SvgIcon from "../../Shared/MiniComponents/SvgIcon";
 import ToolTip from "../../Shared/MiniComponents/ToolTip";
 import s from "./RemoveCartProductBtn.module.scss";
-
+// This componenet removes the product from the cart 
 const RemoveCartProductBtn = ({ productId }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();

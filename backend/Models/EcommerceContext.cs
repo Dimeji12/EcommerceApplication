@@ -52,7 +52,7 @@ namespace backend.Models
                 .HasOne(o => o.ShippingAddress)
                 .WithMany()
                 .HasForeignKey(o => o.ShippingAddressId)
-                .OnDelete(DeleteBehavior.Restrict); // Or cascade if you want to delete related entities
+                .OnDelete(DeleteBehavior.Restrict); 
 
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.BillingAddress)
@@ -73,8 +73,6 @@ namespace backend.Models
                 .OnDelete(DeleteBehavior.Cascade);
 
 
-            // Assuming you want to treat ProductColor as a value object:
-            // modelBuilder.Entity<ProductColor>().HasNoKey();
 
             base.OnModelCreating(modelBuilder);
         }

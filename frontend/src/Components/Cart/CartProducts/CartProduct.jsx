@@ -13,10 +13,10 @@ const CartProduct = ({ data }) =>
 
   const thePrice = discount == null || discount > price ? price : (price - discount).toFixed(2);
 
-  // Safeguard for `afterDiscount` and handle any undefined or null values
+ 
   const priceAfterDiscount = parseFloat((afterDiscount || "0").replaceAll(",", ""));
-  const subTotal = (quantity * thePrice).toFixed(2);
-  const [productImage, setProductImage] = useState();
+  const subTotal = (quantity * thePrice).toFixed(2);//This calculates the subtotal for the one or more products 
+  const [productImage, setProductImage] = useState();//This is a state to store the image of the product
 
   const { t } = useTranslation();
 
@@ -31,6 +31,7 @@ const CartProduct = ({ data }) =>
 
   useEffect(() =>
   {
+     //This async function is used if fetching the product image from the backend 
     async function fetchProductImage()
     {
       if (id != null)
